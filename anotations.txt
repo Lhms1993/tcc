@@ -1,0 +1,68 @@
+0 - cv2.CascadeClassifier e haarcascade_frontalface_default
+
+1 - Foram gerados datasets diferentes levando em consideração a quantidade de images que não são faces que foram encontradas
+    dentro do "input_faces". Para gerar evidências e usar na apresentação, fazer a geração usando os seguintes valores:
+    1.1 - scaleFactor=1.03, minNeighbors=5
+        Obama
+            Total       - 10
+            Geradas     - 27
+            Corretas    - 10
+            Excluídas   - 17
+        Trump
+            Total       - 10
+            Geradas     - 17
+            Corretas    - 9
+            Excluídas   - 8
+        Biden
+            Total       - 10
+            Geradas     - 31
+            Corretas    - 11
+            Excluídas   - 20
+    1.3 - scaleFactor=1.03, minNeighbors=13
+        Obama
+            Total       - 10
+            Geradas     - 15
+            Corretas    - 10
+            Excluídas   - 5
+        Trump
+            Total       - 10
+            Geradas     - 11
+            Corretas    - 9
+            Excluídas   - 2
+        Biden
+            Total       - 10
+            Geradas     - 16
+            Corretas    - 10
+            Excluídas   - 6
+    1.3 - dataset_3 - scaleFactor=1.03, minNeighbors=23
+        Obama
+            Total       - 10
+            Geradas     - 11
+            Corretas    - 10
+            Excluídas   - 1
+        Trump
+            Total       - 10
+            Geradas     - 8
+            Corretas    - 7
+            Excluídas   - 1
+        Biden
+            Total       - 10
+            Geradas     - 13
+            Corretas    - 10
+            Excluídas   - 3
+    1.4 - dataset_3 - scaleFactor=1.03, minNeighbors=49
+        Obama
+            Total       - 10
+            Geradas     - 10
+            Excluídas   - 0
+        Trump
+            Total       - 10
+            Geradas     - 6
+            Excluídas   - 0
+        Biden
+            Total       - 10
+            Geradas     - 9
+            Excluídas   - 0
+
+2 - cv2.face.LBPHFaceRecognizer_create (contrib do opencv)
+

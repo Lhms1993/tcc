@@ -1,0 +1,18 @@
+# Python settings folders and files
+python_env/
+tcc_luiz_env/
+tcc_luiz/
+Face-Search-main/
+*__pycache__*
+
+# VSCode settings
+.vscode/
+
+# Documentation folder
+documentation/
+
+# Images to debug and tests
+files/*.jpg
+*/dataset_*/*/*.jpg
+data/app.log
+*.yml
