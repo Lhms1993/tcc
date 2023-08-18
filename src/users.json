@@ -1,0 +1,18 @@
+{
+    "JandersonDoNascimento": {
+        "user_birthday": "05/07/1995",
+        "user_rfid": 1060436021,
+        "user_faces": [
+            "data/new_yale_faces/JandersonDoNascimento_normal.png",
+            "data/new_yale_faces/JandersonDoNascimento_sleepy.png",
+            "data/new_yale_faces/JandersonDoNascimento_happy.png",
+            "data/new_yale_faces/JandersonDoNascimento_wink.png",
+            "data/new_yale_faces/JandersonDoNascimento_surprised.png",
+            "data/new_yale_faces/JandersonDoNascimento_rightlight.png",
+            "data/new_yale_faces/JandersonDoNascimento_leftlight.png",
+            "data/new_yale_faces/JandersonDoNascimento_sad.png",
+            "data/new_yale_faces/JandersonDoNascimento_centerlight.png",
+            "data/new_yale_faces/JandersonDoNascimento_glasses.png"
+        ]
+    }
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="gpbox_user_list">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>580</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Lista de usuários</string>
+    </property>
+    <widget class="QTableWidget" name="table_user_list">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>560</width>
+       <height>250</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectItems</enum>
+     </property>
+     <column>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data de Nasc.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tag RFIID</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_user_update">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>20</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Atualizar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_user_delete">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>50</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Deletar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_back_page">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>80</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Voltar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

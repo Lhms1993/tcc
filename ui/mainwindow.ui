@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>100</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FaceRecognition-0.1.0</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn_start_app">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Iniciar aplicação</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_train_network">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Treinar rede</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>300</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="Portuguese" country="Brazil"/>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="action_user_create"/>
+    <addaction name="action_user_list"/>
+    <addaction name="action_show_logs"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <action name="action_user_create">
+   <property name="text">
+    <string>Criar usuário</string>
+   </property>
+  </action>
+  <action name="action_show_logs">
+   <property name="text">
+    <string>Ver registros</string>
+   </property>
+  </action>
+  <action name="action_user_delete">
+   <property name="text">
+    <string>Excluir usuário</string>
+   </property>
+  </action>
+  <action name="action_user_list">
+   <property name="text">
+    <string>Listar usuário</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

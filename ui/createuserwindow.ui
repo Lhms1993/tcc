@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateUserWindow</class>
+ <widget class="QMainWindow" name="CreateUserWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1181</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Criar usuário</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="gpbox_user_data">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>461</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Dados do usuário</string>
+    </property>
+    <widget class="QLineEdit" name="txt_user_name">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>20</y>
+       <width>300</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Nome do Usuário</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="date_user_birthday">
+     <property name="geometry">
+      <rect>
+       <x>115</x>
+       <y>50</y>
+       <width>110</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_user_name">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>30</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nome</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_user_birthday">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Data de nascimento</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_cancel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>75</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_input_rfid">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>80</y>
+       <width>81</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Ler tag RFID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txt_user_rfid">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>50</y>
+       <width>181</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Tag RFID</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_user_rfid">
+     <property name="geometry">
+      <rect>
+       <x>235</x>
+       <y>50</y>
+       <width>30</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>RFID</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_capture_faces">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>80</y>
+       <width>85</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Carregar faces</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_save">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>80</y>
+       <width>71</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Salvar</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="qpbox_create_instructions">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>421</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Instruções para cadastro</string>
+    </property>
+    <widget class="QTextEdit" name="txt_instructions_to_create">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>401</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gpbox_faces">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>1161</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Faces</string>
+    </property>
+    <widget class="QGroupBox" name="gpbox_face_normal">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Normal com olhos abertos</string>
+     </property>
+     <widget class="QLabel" name="label_face_normal">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_normal_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_normal_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_rightlight">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>300</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Levemente para a esquerda</string>
+     </property>
+     <widget class="QLabel" name="label_face_rightlight">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_rightlight_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_rightlight_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_leftlight">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>300</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Levemente para a direita</string>
+     </property>
+     <widget class="QLabel" name="label_face_leftlight">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_leftlight_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_leftlight_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_sleepy">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>20</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Normal com os olhos fechados</string>
+     </property>
+     <widget class="QLabel" name="label_face_sleepy">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_sleepy_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_sleepy_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_happy">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>20</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Sorrindo de olhos abertos</string>
+     </property>
+     <widget class="QLabel" name="label_face_happy">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_happy_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_happy_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_sad">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>300</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Triste</string>
+     </property>
+     <widget class="QLabel" name="label_face_sad">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_sad_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_sad_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_surprised">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>20</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Surpreso(a)</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <widget class="QLabel" name="label_face_surprised">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_surprised_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_surprised_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_glasses">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>300</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Normal com óculos (exceto óculos escuros)</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <widget class="QLabel" name="label_face_glasses">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_glasses_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_glasses_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_centerlight">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>300</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Raiva</string>
+     </property>
+     <widget class="QLabel" name="label_face_centerlight">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_centerlight_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_centerlight_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="gpbox_face_wink">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>20</y>
+       <width>221</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Sorrindo de olhos fechados</string>
+     </property>
+     <widget class="QLabel" name="label_face_wink">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_wink_clear">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Limpar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_face_wink_capture">
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>230</y>
+        <width>100</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Carregar</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
