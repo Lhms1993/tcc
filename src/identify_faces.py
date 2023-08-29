@@ -1,7 +1,13 @@
+# pylint: disable=all
+
 import re
 import cv2
+import time
 import pickle
 import numpy as np
+
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
 
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtGui import QPixmap, QImage
@@ -9,12 +15,12 @@ from PyQt5.QtCore import QTimer, QRunnable, QObject, pyqtSignal, QThreadPool
 from PyQt5.QtWidgets import QLabel, QWidget, QVBoxLayout, QHBoxLayout, QMessageBox
 
 from insightface.app import FaceAnalysis
+from user_manager import UserManager
 
 TRAINED_MODEL_FILE = 'src/faceID_model.pkl'
 TRAINED_LABELS_FILE = 'src/faceID_model_labels.npy'
 CONFIABILITY = 0.95
 DIMENSION = (320, 243)
-
 
 class Camera:
     def __init__(self, camera):
@@ -32,7 +38,7 @@ class Camera:
             msgBox.setText("Falha ao abrir a câmera.")
             msgBox.exec_()
             return
-    
+
     def closeCamera(self):
         if self.vc is not None:
             self.vc.release()
@@ -46,26 +52,46 @@ class Signals(QObject):
 class MakeInference(QRunnable):
     def __init__(self):
         super(MakeInference, self).__init__()
-        print("1")
         self.model_app = FaceAnalysis(providers=['CPUExecutionProvider'])
-        print("2")
         self.model_app.prepare(ctx_id=0, det_size=(640, 640))
-        print("3")
         with open(TRAINED_MODEL_FILE, 'rb') as file:
             self.model = pickle.load(file, encoding='utf-8')
-        print("4")
         with open(TRAINED_LABELS_FILE, 'rb') as file:
             self.model_labels = np.load(TRAINED_LABELS_FILE)
-        print("5")
         self.signals = Signals()
         self.frame = None
         self.execute = True
+
+        user_manager = UserManager()
+        user_data = user_manager.read_user_data()
+        self.rfid_list = []
+        for user_name in user_data.keys():
+            self.rfid_list.append(user_data[user_name]['user_rfid'])
+
+        self.MIFAREReader = SimpleMFRC522()
+        self.LED = 18
+        GPIO.setup(self.LED, GPIO.OUT)
+        GPIO.output(self.LED, GPIO.LOW)
     
     def stop(self):
         self.execute = False
     
+    def compare_rfid(self, uid):
+        if uid in self.rfid_list:                #Open the Doggy Door if matching UIDs
+            print("Access Granted")
+            GPIO.output(self.LED, GPIO.HIGH)  #Turn on LED
+            time.sleep(5)                #Wait 5 Seconds
+            GPIO.output(self.LED, GPIO.LOW)   #Turn off LED
+        else:                            #Don't open if UIDs don't match
+            print("Access Denied, YOU SHALL NOT PASS!")
+
     def run(self):
         while self.execute:
+            
+            uid = self.MIFAREReader.read()[0]
+            if uid:
+                self.compare_rfid(uid=uid)
+
             if self.frame is None:
                 continue
             try:
