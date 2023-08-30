@@ -1,7 +1,7 @@
 {
     "JandersonDoNascimento": {
         "user_birthday": "05/07/1995",
-        "user_rfid": 1060436021,
+        "user_rfid": 454270145892,
         "user_faces": [
             "data/new_yale_faces/JandersonDoNascimento_normal.png",
             "data/new_yale_faces/JandersonDoNascimento_sleepy.png",
@@ -13,6 +13,22 @@
             "data/new_yale_faces/JandersonDoNascimento_sad.png",
             "data/new_yale_faces/JandersonDoNascimento_centerlight.png",
             "data/new_yale_faces/JandersonDoNascimento_glasses.png"
+        ]
+    },
+    "LuizHenriqueMendesDaSilva": {
+        "user_birthday": "09/12/1993",
+        "user_rfid": 851463960629,
+        "user_faces": [
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_normal.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_sleepy.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_happy.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_wink.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_surprised.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_rightlight.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_leftlight.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_sad.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_centerlight.png",
+            "data/new_yale_faces/LuizHenriqueMendesDaSilva_glasses.png"
         ]
     }
 }
